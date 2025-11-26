@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>ExamAnalyzerAI — Analyze Past Papers</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="top">
+    <div class="container">
+      <h1>ExamAnalyzerAI</h1>
+      <p class="tag">Upload past papers or paste text — get repeated questions, chapter weightage & a study plan.</p>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="card">
+      <h2>1) Paste text (fast)</h2>
+      <textarea id="textInput" placeholder="Paste exam content or questions here..." rows="8"></textarea>
+      <button id="analyzeTextBtn" class="btn">Analyze Text</button>
+    </section>
+
+    <section class="card">
+      <h2>2) Upload files (PDF / image)</h2>
+      <input id="fileInput" type="file" accept=".pdf,image/*" multiple />
+      <p class="muted">Tip: For best results use text PDFs. Scanned PDFs & images use OCR on the server (Tesseract).</p>
+      <button id="uploadBtn" class="btn">Upload & Analyze</button>
+      <div id="uploadProgress" class="muted"></div>
+    </section>
+
+    <section class="card" id="resultsCard" style="display:none">
+      <h2>Results</h2>
+      <div id="summary"></div>
+      <div id="mostProbable"></div>
+      <div id="clusters"></div>
+      <div id="studyPlan"></div>
+      <div id="gptSummary"></div>
+      <a id="downloadJson" class="btn" href="#" download="analysis.json">Download JSON</a>
+    </section>
+
+    <section class="card small">
+      <h3>Notes</h3>
+      <ul>
+        <li>PDF text extraction works for text PDFs. Scanned PDFs & images use OCR on the server (Tesseract).</li>
+        <li>OpenAI key improves quality (embeddings + GPT summary). Set OPENAI_API_KEY in backend env.</li>
+      </ul>
+    </section>
+  </main>
+
+  <footer class="container footer">
+    <small>© 2025 ExamAnalyzerAI — Built to get students ready.</small>
+  </footer>
+
+  <script src="config.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

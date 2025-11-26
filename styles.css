@@ -1,0 +1,15 @@
+:root{--bg:#f5f7fb;--card:#fff;--accent:#0066cc;--muted:#666}
+body{margin:0;font-family:Inter,Arial,Helvetica,sans-serif;background:var(--bg);color:#111}
+.container{max-width:980px;margin:18px auto;padding:0 16px}
+.top{background:var(--accent);color:#fff;padding:26px 0}
+.top h1{margin:0;font-size:28px}
+.top .tag{margin-top:8px;opacity:.95}
+.card{background:var(--card);padding:18px;border-radius:10px;box-shadow:0 6px 18px rgba(16,24,40,.06);margin:18px 0}
+.card.small{padding:12px;font-size:14px}
+textarea{width:100%;padding:12px;border-radius:8px;border:1px solid #e5e7eb;resize:vertical}
+input[type=file]{display:block;margin-top:8px}
+.btn{display:inline-block;padding:10px 14px;background:var(--accent);color:#fff;border-radius:8px;border:0;cursor:pointer;margin-top:10px}
+.muted{color:var(--muted);font-size:14px;margin-top:8px}
+.footer{margin:20px 0;text-align:center;color:#666;font-size:13px}
+pre{background:#f3f4f6;padding:12px;border-radius:8px;overflow:auto}
+#mostProbable li,#clusters li,#studyPlan li{margin:6px 0}
